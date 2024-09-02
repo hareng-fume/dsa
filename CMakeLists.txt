@@ -7,7 +7,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(dsa main.cpp
     suffix_trie.h
-    suffix_trie.cpp)
+    suffix_trie.cpp
+    multi_string_search.h
+    multi_string_search.cpp)
 
 include(GNUInstallDirs)
 install(TARGETS dsa
