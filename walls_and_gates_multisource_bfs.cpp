@@ -57,6 +57,11 @@ void wallsAndGates(std::vector<std::vector<int>> &o_grid)
         }
     }
 
+    if (layerQueue.empty())
+        return;
+
+    const std::array<int, 5> directions = {1, 0, -1, 0, 1};
+
     int distance = 0;
     while (!layerQueue.empty()) {
         for (int i = 0; i < layerQueue.size(); ++i) {
@@ -65,7 +70,6 @@ void wallsAndGates(std::vector<std::vector<int>> &o_grid)
 
             o_grid[r][c] = distance;
 
-            const std::array<int, 5> directions = {1, 0, -1, 0, 1};
             for (int j = 1; j < directions.size(); ++j) {
                 int newR = r + directions[j - 1];
                 int newC = c + directions[j];
