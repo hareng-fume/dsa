@@ -9,7 +9,9 @@ add_executable(dsa main.cpp
     suffix_trie.h
     suffix_trie.cpp
     multi_string_search.h
-    multi_string_search.cpp)
+    multi_string_search.cpp
+    walls_and_gates_multisource_bfs.h
+    walls_and_gates_multisource_bfs.cpp)
 
 include(GNUInstallDirs)
 install(TARGETS dsa
