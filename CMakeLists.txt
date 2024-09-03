@@ -11,7 +11,10 @@ add_executable(dsa main.cpp
     multi_string_search.h
     multi_string_search.cpp
     walls_and_gates_multisource_bfs.h
-    walls_and_gates_multisource_bfs.cpp)
+    walls_and_gates_multisource_bfs.cpp
+    middle_list_node.h
+    middle_list_node.cpp
+    linked_list.h)
 
 include(GNUInstallDirs)
 install(TARGETS dsa
