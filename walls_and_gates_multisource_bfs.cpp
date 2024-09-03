@@ -61,6 +61,8 @@ void wallsAndGates(std::vector<std::vector<int>> &o_grid)
     while (!layerQueue.empty()) {
         for (int i = 0; i < layerQueue.size(); ++i) {
             auto [r, c] = layerQueue.front();
+            layerQueue.pop();
+
             o_grid[r][c] = distance;
 
             const std::array<int, 5> directions = {1, 0, -1, 0, 1};
