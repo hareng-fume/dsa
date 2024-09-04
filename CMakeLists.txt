@@ -14,7 +14,11 @@ add_executable(dsa main.cpp
     walls_and_gates_multisource_bfs.cpp
     middle_list_node.h
     middle_list_node.cpp
-    linked_list.h)
+    linked_list.h
+    safest_path_in_grid.h
+    safest_path_in_grid.cpp
+    utils.h
+    utils.cpp)
 
 include(GNUInstallDirs)
 install(TARGETS dsa

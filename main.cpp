@@ -1,9 +1,9 @@
 #include <iostream>
 
-using namespace std;
+#include "safest_path_in_grid.h"
 
 int main()
 {
-    cout << "Hello World!" << endl;
+    test_maxSafenessFactor();
     return 0;
 }
