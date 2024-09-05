@@ -18,7 +18,9 @@ add_executable(dsa main.cpp
     safest_path_in_grid.h
     safest_path_in_grid.cpp
     utils.h
-    utils.cpp)
+    utils.cpp
+    kth_smallest_prime_fraction.h
+    kth_smallest_prime_fraction.cpp)
 
 include(GNUInstallDirs)
 install(TARGETS dsa
