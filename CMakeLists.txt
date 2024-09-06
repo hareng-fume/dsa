@@ -20,7 +20,9 @@ add_executable(dsa main.cpp
     utils.h
     utils.cpp
     kth_smallest_prime_fraction.h
-    kth_smallest_prime_fraction.cpp)
+    kth_smallest_prime_fraction.cpp
+    diagonal_traverse.h
+    diagonal_traverse.cpp)
 
 include(GNUInstallDirs)
 install(TARGETS dsa
