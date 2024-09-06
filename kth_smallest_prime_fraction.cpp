@@ -3,7 +3,9 @@
 #include <iostream>
 #include <queue>
 
-std::vector<int> kthSmallestPrimeFraction(const std::vector<int> &arr, int k)
+namespace Impl {
+
+std::vector<int> _kthSmallestPrimeFraction(const std::vector<int> &arr, int k)
 {
     struct Fraction final
     {
@@ -38,11 +40,19 @@ std::vector<int> kthSmallestPrimeFraction(const std::vector<int> &arr, int k)
     const auto &smallestFraction = fractionMinHeap.top();
     return {arr[smallestFraction.numeratorIdx], arr[smallestFraction.denominatorIdx]};
 }
+} // namespace Impl
 
-void test_kthSmallestPrimeFraction()
+std::vector<int> kthSmallestPrimeFraction(const std::vector<int> &arr, int k)
+{
+    return Impl::_kthSmallestPrimeFraction(arr, k);
+}
+
+namespace Test {
+void kthSmallestPrimeFraction()
 {
     std::vector<int> arr{1, 2, 3, 5};
-    const auto smallestFraction = kthSmallestPrimeFraction(arr, 3);
+    const auto smallestFraction = Impl::_kthSmallestPrimeFraction(arr, 3);
     std::cout << "result is: [" << smallestFraction[0] << ", " << smallestFraction[1]
               << "], should be: [" << 2 << ", " << 5 << "]" << std::endl;
 }
+} // namespace Test

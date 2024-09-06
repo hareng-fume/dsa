@@ -25,6 +25,8 @@
 
 std::vector<int> kthSmallestPrimeFraction(const std::vector<int> &arr, int k);
 
-void test_kthSmallestPrimeFraction();
+namespace Test {
+void kthSmallestPrimeFraction();
+}
 
 #endif // KTH_SMALLEST_PRIME_FRACTION_H

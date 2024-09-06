@@ -28,6 +28,8 @@
 
 int maximumSafenessFactor(std::vector<std::vector<int>> &grid);
 
-void test_maxSafenessFactor();
+namespace Test {
+void maximumSafenessFactor();
+}
 
 #endif // SAFEST_PATH_IN_GRID_H

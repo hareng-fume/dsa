@@ -10,7 +10,9 @@
     grid[r][c] = 0 => empty.
 */
 
-bool safenessFactorIsValid(const std::vector<std::vector<int>> &grid, int safenessFactor)
+namespace Impl {
+
+bool _safenessFactorIsValid(const std::vector<std::vector<int>> &grid, int safenessFactor)
 {
     if (grid[0][0] < safenessFactor || grid[grid.size() - 1][grid[0].size() - 1] < safenessFactor)
         return false;
@@ -45,7 +47,7 @@ bool safenessFactorIsValid(const std::vector<std::vector<int>> &grid, int safene
     return false;
 }
 
-int maximumSafenessFactor(std::vector<std::vector<int>> &grid)
+int _maximumSafenessFactor(std::vector<std::vector<int>> &grid)
 {
     // find all rooms with a thief.
     std::vector<int> r_thief, c_thief;
@@ -105,7 +107,7 @@ int maximumSafenessFactor(std::vector<std::vector<int>> &grid)
     int resultingSafenessFactor = -1;
     while (minSafenessFactor <= maxSafenessFactor) {
         int currSafenessFactor = (maxSafenessFactor + minSafenessFactor) / 2;
-        if (safenessFactorIsValid(grid, currSafenessFactor)) {
+        if (_safenessFactorIsValid(grid, currSafenessFactor)) {
             resultingSafenessFactor = currSafenessFactor;
             minSafenessFactor = currSafenessFactor + 1;
         } else {
@@ -115,12 +117,20 @@ int maximumSafenessFactor(std::vector<std::vector<int>> &grid)
 
     return resultingSafenessFactor;
 }
+} // namespace Impl
 
-void test_maxSafenessFactor()
+int maximumSafenessFactor(std::vector<std::vector<int>> &grid)
+{
+    return Impl::_maximumSafenessFactor(grid);
+}
+
+namespace Test {
+void maximumSafenessFactor()
 {
     std::vector<std::vector<int>> grid{{0, 0, 0, 1}, {0, 0, 0, 0}, {0, 0, 0, 0}, {1, 0, 0, 0}};
     Utils::printVectorInt2D(grid);
-    const int maxSafenessFactor = maximumSafenessFactor(grid);
+    const int maxSafenessFactor = Impl::_maximumSafenessFactor(grid);
     Utils::printVectorInt2D(grid);
     std::cout << "max safeness factor: " << maxSafenessFactor << std::endl;
 }
+} // namespace Test
