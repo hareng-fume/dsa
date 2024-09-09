@@ -6,14 +6,21 @@
 
 namespace Utils {
 
-template<typename T>
-inline void printVector(const std::vector<T> &i_vector)
+template<typename T1, template<typename T2, class Allocator = std::allocator<T2>> class Container>
+inline void print(const Container<T1> &i_container)
 {
     std::cout << "{";
-    if (i_vector.size() > 0)
-        std::cout << i_vector[0];
-    for (int i = 1; i < i_vector.size(); ++i)
-        std::cout << "," << i_vector[i];
+    auto it = i_container.begin();
+    if (it != i_container.end()) {
+        std::cout << *it;
+        ++it;
+
+        while (it != i_container.end()) {
+            std::cout << "," << *it;
+            ++it;
+        }
+    }
+
     std::cout << "}\n";
 }
 

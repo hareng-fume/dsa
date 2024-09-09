@@ -22,7 +22,9 @@ add_executable(dsa main.cpp
     kth_smallest_prime_fraction.h
     kth_smallest_prime_fraction.cpp
     diagonal_traverse.h
-    diagonal_traverse.cpp)
+    diagonal_traverse.cpp
+    longest_subarray_with_sum.h
+    longest_subarray_with_sum.cpp)
 
 include(GNUInstallDirs)
 install(TARGETS dsa
