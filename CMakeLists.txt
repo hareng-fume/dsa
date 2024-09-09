@@ -26,7 +26,9 @@ add_executable(dsa main.cpp
     longest_subarray_with_sum.h
     longest_subarray_with_sum.cpp
     largest_range.h
-    largest_range.cpp)
+    largest_range.cpp
+    underscorify_substring.h
+    underscorify_substring.cpp)
 
 include(GNUInstallDirs)
 install(TARGETS dsa

@@ -5,10 +5,11 @@
 #include "largest_range.h"
 #include "longest_subarray_with_sum.h"
 #include "safest_path_in_grid.h"
+#include "underscorify_substring.h"
 
 int main()
 {
-    Test::largestRange();
+    Test::underscorifySubstring();
 
     return 0;
 }
