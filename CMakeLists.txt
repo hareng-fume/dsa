@@ -24,7 +24,9 @@ add_executable(dsa main.cpp
     diagonal_traverse.h
     diagonal_traverse.cpp
     longest_subarray_with_sum.h
-    longest_subarray_with_sum.cpp)
+    longest_subarray_with_sum.cpp
+    largest_range.h
+    largest_range.cpp)
 
 include(GNUInstallDirs)
 install(TARGETS dsa

@@ -21,7 +21,7 @@ inline void print(const Container<T1> &i_container)
         }
     }
 
-    std::cout << "}\n";
+    std::cout << "}" << std::endl;
 }
 
 void printVectorInt2D(const std::vector<std::vector<int>> &i_vector2D);
